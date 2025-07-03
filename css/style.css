@@ -459,6 +459,7 @@ body {
 .form-left {
 	flex-wrap: wrap;
 	justify-content: space-between;
+	gap: 19px;
 }
 
 .form-input,
