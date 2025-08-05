@@ -97,6 +97,8 @@ body {
 }
 
 .btn {
+	position: relative;
+	outline: none;
 	font-weight: 600;
 	font-size: 15px;
 	text-transform: uppercase;
@@ -104,6 +106,35 @@ body {
 	background-color: #3172b9;
 	color: #fff;
 	border-radius: 3px
+}
+
+.btn::after {
+	content: "";
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	right: -3px;
+	bottom: -3px;
+	border-radius: inherit;
+	border: 1px solid #3172b9;
+	outline: none;
+	opacity: 0;
+}
+
+.btn:focus::after {
+	opacity: 1;
+}
+
+.btn:hover {
+	background-color: #71A7E2;
+}
+
+.btn:active {
+	background-color: #0E3B6C;
+}
+
+.btn:active::after {
+	outline: none;
 }
 
 .header,
@@ -142,9 +173,39 @@ body {
 }
 
 .header-link {
+	position: relative;
 	font-weight: 600;
 	color: #1c1c1c;
 	font-size: 15px;
+}
+
+.header-link:focus {
+	outline-offset: 2px;
+	outline: 1px solid #71A7E2;
+}
+
+.header-link:hover {
+	color: #71A7E2;
+}
+
+.header-link::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 2px;
+	background-color: #3172b9;
+	opacity: 0;
+}
+
+.header-link:active {
+	color: #3172b9;
+	outline: none;
+}
+
+.header-link:active::after {
+	opacity: 1;
 }
 
 
@@ -236,8 +297,29 @@ body {
 	border-radius: 5px;
 }
 
+.services-item:hover {
+	border-color: #3172b9;
+	background-color: #3172b9;
+}
+
 .services-item-icon {
 	margin-bottom: 25px;
+}
+
+.services-item-icon path {
+	fill: #3172b9;
+}
+
+.services-item:hover .services-item-icon path {
+	fill: #FFF;
+}
+
+.services-item:hover .services-item-title {
+	color: #FFF;
+}
+
+.services-item:hover .services-item-desk {
+	color: #FFF;
 }
 
 .services-item-title {
@@ -276,6 +358,59 @@ body {
 .blog-prewiew {
 	border: 1px solid #E4E4E4;
 	border-radius: 5px;
+}
+
+.blog-prewiew-link {
+	position: relative;
+	width: 100%;
+}
+
+.blog-prewiew-link:focus {
+	background-color: #71A7E2;
+}
+
+.blog-prewiew-link:focus .blog-prewiew-title {
+	color: #fff;
+}
+
+.blog-prewiew-link:focus .blog-prewiew-desc {
+	color: #fff;
+}
+
+.blog-prewiew-link:focus .blog-prewiew-time {
+	color: #fff;
+}
+
+.blog-prewiew-link:hover {
+	background-color: #3172b9;
+}
+
+.blog-prewiew-link:hover .blog-prewiew-title {
+	color: #fff;
+}
+
+.blog-prewiew-link:hover .blog-prewiew-desc {
+	color: #fff;
+}
+
+.blog-prewiew-link:hover .blog-prewiew-time {
+	color: #fff;
+}
+
+.blog-prewiew-link:active {
+	background-color: #0E3B6C
+}
+
+.blog-prewiew-link:active .blog-prewiew-title {
+	color: #fff;
+}
+
+.blog-prewiew-link:active .blog-prewiew-desc {
+	color: #fff;
+}
+
+.blog-prewiew-link:active .blog-prewiew-time {
+	color: #fff;
 }
 
 .blog-prewiew-img {
@@ -426,6 +561,21 @@ body {
 	line-height: 180%;
 }
 
+.contacts-item-link:focus {
+	width: fit-content;
+	outline: 1px solid #71A7E2;
+}
+
+.contacts-item-link:hover {
+	width: fit-content;
+	color: #71A7E2;
+}
+
+.contacts-item-link:active {
+	width: fit-content;
+	outline: none;
+	color: #0E3B6C;
+}
 
 
 
@@ -459,6 +609,7 @@ body {
 .form-left {
 	flex-wrap: wrap;
 	justify-content: space-between;
+	row-gap: 19px;
 }
 
 .form-input,
@@ -468,6 +619,48 @@ body {
 	padding: 16px 28px;
 	border: 1px solid #DADADA;
 	border-radius: 50px;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: #71A7E2;
+	background-color: #71A7E233;
+}
+
+.form-input:hover {
+	border-color: #71A7E2;
+}
+
+.form-input:active {
+	border-color: #0E3B6C;
+}
+
+.form-select:focus {
+	outline: none;
+	border-color: #71A7E2;
+	background-color: #71A7E233;
+}
+
+.form-select:hover {
+	border-color: #71A7E2;
+}
+
+.form-select:active {
+	border-color: #0E3B6C;
+}
+
+.form-textarea:focus {
+	outline: none;
+	border-color: #71A7E2;
+	background-color: #71A7E233;
+}
+
+.form-textarea:hover {
+	border-color: #71A7E2;
+}
+
+.form-textarea:active {
+	border-color: #0E3B6C;
 }
 
 .form-textarea {
@@ -551,4 +744,44 @@ body {
 
 .social-network-list {
 	gap: 32px;
+	align-items: center;
+}
+
+.social-network-link {
+	width: 24px;
+	height: 24px;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-network-link path {
+	fill: black;
+}
+
+.social-network-link-icon-mail path {
+	fill: transparent;
+	stroke: black;
+}
+
+.social-network-link:focus {
+	outline-offset: 2px;
+	outline: 1px solid #71A7E2;
+}
+
+.social-network-link:hover path {
+	fill: #71A7E2;
+}
+
+.social-network-link-icon-mail:hover path {
+	fill: transparent;
+	stroke: #71A7E2;
+}
+
+.social-network-link:active path {
+	fill: #3172b9;
+}
+
+.social-network-link-icon-mail:active path {
+	fill: transparent;
+	stroke: #3172b9;
 }
