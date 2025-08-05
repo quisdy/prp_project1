@@ -610,6 +610,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	row-gap: 19px;
+	gap: 19px;
 }
 
 .form-input,
